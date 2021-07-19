@@ -53,7 +53,7 @@ def parse_reports(file_path, reports, outputpath, baseUrl, categories):
     json_string = json.dumps(report)
     report_name = report["title"]
     report_name = report_name.replace(" ", "-") + ".json"
-    with open(os.path.join(outputpath + "/reports/", report_name), "w") as file:
+    with open(os.path.join(outputpath + "/reports/", report_name), "w+") as file:
         file.write(json_string)
         file.close()
     logging.debug("report: ", report)
